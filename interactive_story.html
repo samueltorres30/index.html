@@ -6,6 +6,59 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Interactive Story</title>
 </head>
+
+<div id="story">
+
+
+</div>
+
+<div id="buttons">
+
+
+</div>
+
+<script>
+const myStory = {
+    intro = {
+        //insert intro of story here,
+        choices : ["one","two","three"]
+    }
+}
+let storyContainer = document.getElementById
+('story');
+
+let buttonContainer = document.getElementById
+('buttons');
+
+    function createButton(choice){
+        let button = document.createElement
+        ('button');
+
+        button.innerHTML = "My button" +choice;
+
+        button.addEventListener('click', function () {alert('Button' + choice + 'was clicked')})
+
+        buttonContainer.appendChild(button);
+    }
+
+for(let i>0)
+
+function showStory(text){
+    let storyText = document.createElement
+        ('yeet');
+
+        storyText.innerText = text;
+
+        storyContainer.appendChild(storyText);
+}
+for(choice in myStory.intro.choices) {
+    createButton(choice)
+}
+
+
+
+
+</script>
 <body>
     
 </body>
