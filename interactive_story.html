@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Samuel and Ben's Interactive Story</title>
+    <title>Samuel and Benjamin's Interactive Story</title>
 </head>
 
 <div id="story">
@@ -29,6 +29,29 @@ let storyContainer = document.getElementById
 
 let buttonContainer = document.getElementById
 ('buttons');
+let history = ["intro"];
+const story = {
+    intro: {
+        text: "test1"
+    choices : [
+        ["Go to page 1", "page1"],
+        ["Go to page 2", "page2"],
+        ["Go to page 3", "page3"]
+        ]
+    },
+    page1 : {
+        text : "test2"
+        choices : [
+        ["Go to page 2", "page2"],
+        ["Go to page 3", "page3"],
+        ["Go to page 4", "page4"]
+        ]
+    },
+    page2 : {
+        text : "test3"
+        choices : []
+    }
+}
 
     function createButton(choice){
         let button = document.createElement
@@ -40,10 +63,6 @@ let buttonContainer = document.getElementById
 
         buttonContainer.appendChild(button);
     } 
-var i=0
-for(let i = 0; i < 8; i++){
-
-}
 
 function showStory(text){
     let storyText = document.createElement
@@ -56,15 +75,13 @@ function showStory(text){
 for(choice in myStory.intro.choices) {
     createButton(choice)
 }
+ function buildStory (text) {
+     let storyItem = document.createElement("p");
 
+     storyItem.innerText = text;
 
-
-
-
-
-
-
-
+     storyContainer.appendChild(storyItem);
+ }
 
 
 
