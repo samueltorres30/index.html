@@ -39,9 +39,9 @@ const story = {
     intro: {
         text: "",
     choices : [
-        ["Go to page 1", "page1"],
-        ["Go to page 2", "page2"],
-        ["Go to page 3", "page3"]
+        ["Stay and get questioned by police."],
+        ["Walk away."],
+        ["Fight the robbers."]
         ]
     },
     page1 : {
@@ -84,7 +84,7 @@ const story = {
         let button = document.createElement
         ('button');
 
-        button.innerHTML = "My button" +choice;
+        button.innerHTML = "My button" +choices;
 
         button.addEventListener('click', function () {alert('Button' + choice + 'was clicked')})
 
