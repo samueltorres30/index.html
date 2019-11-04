@@ -9,8 +9,6 @@
 
 <div id="intro">
     <h1>The One Who Got Away</h1>
-
-    <p>Our story begins when Ross, Chandler, Joey, Rachel, Monica, and Phoebe decide to go to a bakery for dessert, when they witness a robbery at a bank.</p>
 </div>
 <h2></h2>
 <div id="story">
@@ -30,22 +28,22 @@
     let history = ["intro"];
 const story = {
     intro: {
-        text: "",
+        text: "Our story begins when Ross, Chandler, Joey, Rachel, Monica, and Phoebe decide to go to a bakery for dessert, when they witness a robbery at a bank.",
     choices : [
-        ["Stay and get questioned by police."],
-        ["Walk away."],
-        ["Fight the robbers."]
+        ["Stay and get questioned by police.", "option1"],
+        ["Walk away.", "option2"],
+        ["Fight the robbers.", "option3"]
         ]
     },
-    page1 : {
-        text : "",
+    option1 : {
+        text : "Hello there we are going to die",
         choices : [
         ["Go to page 2", "page2"],
         ["Go to page 3", "page3"],
         ["Go to page 4", "page4"]
         ]
     },
-    page2 : {
+    option2 : {
         text : "",
         choices : [
         ["Go to page 3", "page3"],
@@ -53,7 +51,7 @@ const story = {
         ["Go to page 5", "page5"]
         ]
     },
-    page3 : {
+    option3 : {
         text : "",
         choices : [
             ["Go to page 4", "page4"],
@@ -73,14 +71,15 @@ const story = {
 
 }
 
-    function createButton(buttonText, choice){
-        let button = document.createElement("button");
+    function createButton(buttonText, choices){
+        let button = document.createElement("buttons");
 
-        button.innerHTML = "My button" +choices;
+        button.innerHTML = buttonText;
 
         buttonContainer.appendChild(button);
 
-            button.addEventListener ("click", function() {history.push(choice);
+            button.addEventListener ("click", function() {
+                history.push(choices);
                 showStory();
             });
         }
@@ -107,7 +106,7 @@ function showStory(text){
                 buildStory(story[page].text);
 }
     for(let choice of story[currentPage].choices){ // build buttons from choices property of most recent story choice
-                makeButton(choice[0], choice[1])
+                makeButton(choices[0], choices[1])
 }
 
 
