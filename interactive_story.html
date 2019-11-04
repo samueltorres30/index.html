@@ -108,8 +108,13 @@ for(choice in myStory.intro.choices) {
      storyItem.innerText = text;
 
      storyContainer.appendChild(storyItem);
- }
-
+}
+    for(let page of history){ // build story text from items in history array
+                buildStory(story[page].text);
+}
+    for(let choice of story[currentPage].choices){ // build buttons from choices property of most recent story choice
+                makeButton(choice[0], choice[1])
+}
 
 
 </script>
