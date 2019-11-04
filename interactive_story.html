@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Benjamin's and Samuel's Interactive Story</title>
+</head>
+
+<div id="intro">
+    <h1>The One Who Got Away</h1>
+</div>
+
+<div id="story">
+
+</div>
+
+<div id="buttons">
+
+</div>
+
+<script>
+    
+    let storyContainer = document.getElementById("story");
+    
+    let buttonContainer = document.getElementById("buttons");
+
+    let history = ["intro"];
+
+const story = {
+    intro: {
+        text: "Our story begins when Ross, Chandler, Joey, Rachel, Monica, and Phoebe decide to go to a bakery for dessert, when they witness a robbery at a bank.",
+    choices : [
+        ["Stay and get questioned by police.", "option1"],
+        ["Walk away.", "option2"],
+        ["Fight the robbers.", "option3"]
+        ]
+    },
+    option1 : {
+        text : "Hello there we are going to die",
+        choices : [
+        ["Go to page 2", "page2"],
+        ["Go to page 3", "page3"],
+        ["Go to page 4", "page4"]
+        ]
+    },
+    option2 : {
+        text : "",
+        choices : [
+        ["Go to page 3", "page3"],
+        ["Go to page 4", "page4"],
+        ["Go to page 5", "page5"]
+        ]
+    },
+    option3 : {
+        text : "",
+        choices : [
+            ["Go to page 4", "page4"],
+            ["Go to page 5", "page5"],
+            ]
+    },
+    page4: {
+        text :"",
+        choices : [
+            ["Go to page5", "page5"],
+            ]
+    },
+    page5: {
+        text : "",
+        choices : []
+    }
+
+}
+
+    function createButton(buttonText, choice){
+        let button = document.createElement("buttons");
+
+        button.innerHTML = buttonText;
+
+        buttonContainer.appendChild(button);
+
+        button.addEventListener ("click", function() {
+            history.push(choice);
+            showStory();
+        });
+    }
+
+    
+function showStory(text){
+    let currentPage = history[history.length - 1];
+console.log (currentPage)
+        storyContainer.innerHTML = "";
+
+        buttonContainer.innerHTML="";{
+}
+for(let page of history){ // build story text from items in history array
+        buildStory(story[page].text);
+}
+for(let choice of story[currentPage].choices){ 
+        createButton(choice[0], choice[]])
+}
+
+}
+ function buildStory(text) {
+     let storyItem = document.createElement("p");
+
+     storyItem.innerText = text;
+
+     storyContainer.appendChild(storyItem);
+}
+showStory();
+
+</script>
+</body>
+</html>
