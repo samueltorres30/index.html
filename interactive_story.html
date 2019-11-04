@@ -4,20 +4,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Samuel and Benjamin's Interactive Story</title>
+    <title>Benjamin's and Samuel's Interactive Story</title>
 </head>
 
+<div id="intro">
+    <h1>The One Who Got Away</h1>
+
+    <p>Our story begins when Ross, Chandler, Joey, Rachel, Monica, and Phoebe decide to go to a bakery for dessert, when they witness a robbery at a bank.</p>
+</div>
+<h2></h2>
 <div id="story">
 
+    </div>
 
-</div>
-
-<div id="buttons">
-
+    <div id="buttons">
 
 </div>
 
 <script>
+    
 const myStory = {
     intro = {
         text: 'once upon a timel',
@@ -32,7 +37,7 @@ let buttonContainer = document.getElementById
 let history = ["intro"];
 const story = {
     intro: {
-        text: "test1"
+        text: "",
     choices : [
         ["Go to page 1", "page1"],
         ["Go to page 2", "page2"],
@@ -40,7 +45,7 @@ const story = {
         ]
     },
     page1 : {
-        text : "test2"
+        text : "",
         choices : [
         ["Go to page 2", "page2"],
         ["Go to page 3", "page3"],
@@ -48,9 +53,31 @@ const story = {
         ]
     },
     page2 : {
-        text : "test3"
+        text : "",
+        choices : [
+        ["Go to page 3", "page3"],
+        ["Go to page 4", "page4"],
+        ["Go to page 5", "page5"]
+        ]
+    },
+    page3 : {
+        text : "",
+        choices : [
+            ["Go to page 4", "page4"],
+            ["Go to page 5", "page5"],
+            ]
+    },
+    page4: {
+        text :"",
+        choices : [
+            ["Go to page5", "page5"],
+            ]
+    },
+    page5: {
+        text : "",
         choices : []
     }
+
 }
 
     function createButton(choice){
