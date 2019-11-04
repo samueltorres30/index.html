@@ -23,18 +23,11 @@
 
 <script>
     
-const myStory = {
-    intro = {
-        text: 'once upon a timel',
-        choices : ["one","two","three"]
-    }
-}
-let storyContainer = document.getElementById
-('story');
-
-let buttonContainer = document.getElementById
-('buttons');
-let history = ["intro"];
+    let storyContainer = document.getElementById("story");
+    
+    let buttonContainer = document.getElementById("buttons");
+    
+    let history = ["intro"];
 const story = {
     intro: {
         text: "",
@@ -80,27 +73,27 @@ const story = {
 
 }
 
-    function createButton(choice){
-        let button = document.createElement
-        ('button');
+    function createButton(buttonText, choice){
+        let button = document.createElement("button");
 
         button.innerHTML = "My button" +choices;
 
-        button.addEventListener('click', function () {alert('Button' + choice + 'was clicked')})
-
         buttonContainer.appendChild(button);
-    } 
 
+            button.addEventListener ("click", function() {history.push(choice);
+                showStory();
+            });
+        }
+
+    
 function showStory(text){
-    let storyText = document.createElement
-        ('asian');
+    let currentPage = history[history.length - 1];
 
-        storyText.innerText = text;
+        storyText.innerText = "";
 
-        storyContainer.appendChild(storyText);
+        buttonContainer.innerHTML="";{
 }
-for(choice in myStory.intro.choices) {
-    createButton(choice)
+
 }
  function buildStory (text) {
      let storyItem = document.createElement("p");
@@ -109,6 +102,7 @@ for(choice in myStory.intro.choices) {
 
      storyContainer.appendChild(storyItem);
 }
+
     for(let page of history){ // build story text from items in history array
                 buildStory(story[page].text);
 }
