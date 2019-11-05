@@ -80,6 +80,7 @@ const story = {
             });
         }
     function showStory(text){
+        let currentPage = history[history.length - 1];
         console.log(currentPage);
         storyText.innerText = "";
         buttonContainer.innerHTML="";
@@ -93,7 +94,6 @@ const story = {
 
 }
  function buildStory (text) {
-     let currentPage = history[history.length - 1];
      let storyItem = document.createElement("p");
      storyItem.innerText = text;
      storyContainer.appendChild(storyItem);
