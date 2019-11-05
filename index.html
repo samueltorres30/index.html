@@ -26,6 +26,7 @@
     let buttonContainer = document.getElementById("buttons");
     
     let history = ["intro"];
+
 const story = {
     intro: {
         text: "Our story begins when Ross, Chandler, Joey, Rachel, Monica, and Phoebe decide to go to a bakery for dessert, when they witness a robbery at a bank.",
@@ -79,12 +80,13 @@ const story = {
             });
         }
     function showStory(text){
-        let currentPage = history[history.length - 1];
+        
         storyText.innerText = "";
         buttonContainer.innerHTML="";{
 }
 }
  function buildStory (text) {
+     let currentPage = history[history.length - 1];
      let storyItem = document.createElement("p");
      storyItem.innerText = text;
      storyContainer.appendChild(storyItem);
