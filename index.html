@@ -84,7 +84,7 @@ const story = {
         console.log(currentPage);
         storyText.innerText = "";
         buttonContainer.innerHTML="";
-
+    }
     for(let page of history){ // build story text from items in history array
                 buildStory(story[page].text);
     }
@@ -92,7 +92,7 @@ const story = {
                 makeButton(choices[0], choices[1])
     }
 
-}
+
  function buildStory (text) {
      let storyItem = document.createElement("p");
      storyItem.innerText = text;
