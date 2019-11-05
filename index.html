@@ -84,19 +84,19 @@ const story = {
         storyText.innerText = "";
         buttonContainer.innerHTML="";
 
-}
- function buildStory (text) {
-     let currentPage = history[history.length - 1];
-     let storyItem = document.createElement("p");
-     storyItem.innerText = text;
-     storyContainer.appendChild(storyItem);
-
     for(let page of history){ // build story text from items in history array
                 buildStory(story[page].text);
     }
     for(let choice of story[currentPage].choices){ // build buttons from choices property of most recent story choice
                 makeButton(choices[0], choices[1])
     }
+
+}
+ function buildStory (text) {
+     let currentPage = history[history.length - 1];
+     let storyItem = document.createElement("p");
+     storyItem.innerText = text;
+     storyContainer.appendChild(storyItem);
  }
 </script>
 
