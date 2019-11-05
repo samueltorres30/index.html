@@ -10,12 +10,12 @@
 <div id="intro">
     <h1>The One Who Got Away</h1>
 </div>
-
+<h2></h2>
 <div id="story">
 
-</div>
+    </div>
 
-<div id="buttons">
+    <div id="buttons">
 
 </div>
 
@@ -24,9 +24,8 @@
     let storyContainer = document.getElementById("story");
     
     let buttonContainer = document.getElementById("buttons");
-
+    
     let history = ["intro"];
-
 const story = {
     intro: {
         text: "Our story begins when Ross, Chandler, Joey, Rachel, Monica, and Phoebe decide to go to a bakery for dessert, when they witness a robbery at a bank.",
@@ -34,7 +33,7 @@ const story = {
         ["Stay and get questioned by police.", "option1"],
         ["Walk away.", "option2"],
         ["Fight the robbers.", "option3"]
-    ]
+        ]
     },
     option1 : {
         text : "Hello there we are going to die",
@@ -69,48 +68,36 @@ const story = {
         text : "",
         choices : []
     }
-
 }
-
-
-    function createButton(buttonText, choice){
+    function createButton(buttonText, choices){
         let button = document.createElement("buttons");
-
         button.innerHTML = buttonText;
-
         buttonContainer.appendChild(button);
-
-        button.addEventListener ("click", function() {
-            history.push(choice);
-            showStory();
-        });
-    }
-
+            button.addEventListener ("click", function() {
+                history.push(choices);
+                showStory();
+            });
+        }
     
 function showStory(text){
     let currentPage = history[history.length - 1];
-console.log (currentPage)
-        storyContainer.innerHTML = "";
-
+        storyText.innerText = "";
         buttonContainer.innerHTML="";{
 }
-for(let page of history){ // build story text from items in history array
-        buildStory(story[page].text);
 }
-for(let choice of story[currentPage].choices){ 
-        createButton(choice[0], choice[]])
-}
-
-}
- function buildStory(text) {
+ function buildStory (text) {
      let storyItem = document.createElement("p");
-
      storyItem.innerText = text;
-
      storyContainer.appendChild(storyItem);
 }
-showStory();
-
+    for(let page of history){ // build story text from items in history array
+                buildStory(story[page].text);
+}
+    for(let choice of story[currentPage].choices){ // build buttons from choices property of most recent story choice
+                makeButton(choices[0], choices[1])
+}
 </script>
+
+
 </body>
-</html>
+</html> 
