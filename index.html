@@ -66,10 +66,10 @@ const story = {
     },
     page5: {
         text : "",
-        choices : []
+        choices : [""]
     }
 }
-    function createButton(buttonText, choices){
+    function makeButton(buttonText, choices){
         let button = document.createElement("buttons");
         button.innerHTML = buttonText;
         buttonContainer.appendChild(button);
@@ -78,9 +78,8 @@ const story = {
                 showStory();
             });
         }
-    
-function showStory(text){
-    let currentPage = history[history.length - 1];
+    function showStory(text){
+        let currentPage = history[history.length - 1];
         storyText.innerText = "";
         buttonContainer.innerHTML="";{
 }
@@ -94,7 +93,7 @@ function showStory(text){
                 buildStory(story[page].text);
 }
     for(let choice of story[currentPage].choices){ // build buttons from choices property of most recent story choice
-                createButton(choices[0], choices[1])
+                makeButton(choices[0], choices[1])
 }
 </script>
 
