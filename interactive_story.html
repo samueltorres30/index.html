@@ -1,103 +1,106 @@
-<!DOCTYPE html>
+<<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Benjamin's and Samuel's Interactive Story</title>
+    <title>Benjamin and Samuel's Interactive Story</title>
 </head>
+<body>
+    
+    <div id="intro">
+        <h1>The One Who Got Away</h1>
 
-<div id="intro">
-    <h1>The One Who Got Away</h1>
-</div>
-<h2></h2>
-<div id="story">
+        <p>"Our story begins when Ross, Chandler, Joey, Rachel, Monica, and Phoebe decide to go to a bakery for dessert, when they witness a robbery at a bank."</p>
+    </div>
+    <div id="story">
 
     </div>
 
     <div id="buttons">
 
-</div>
+    </div>
 
-<script>
+    <script>
     
-    let storyContainer = document.getElementById("story");
+        let storyContainer = document.getElementById("story");
     
-    let buttonContainer = document.getElementById("buttons");
-    
-    let history = ["intro"];
-const story = {
-    intro: {
-        text: "Our story begins when Ross, Chandler, Joey, Rachel, Monica, and Phoebe decide to go to a bakery for dessert, when they witness a robbery at a bank.",
-    choices : [
-        ["Stay and get questioned by police.", "option1"],
-        ["Walk away.", "option2"],
-        ["Fight the robbers.", "option3"]
-        ]
-    },
-    option1 : {
-        text : "Hello there we are going to die",
-        choices : [
-        ["Go to page 2", "page2"],
-        ["Go to page 3", "page3"],
-        ["Go to page 4", "page4"]
-        ]
-    },
-    option2 : {
-        text : "",
-        choices : [
-        ["Go to page 3", "page3"],
-        ["Go to page 4", "page4"],
-        ["Go to page 5", "page5"]
-        ]
-    },
-    option3 : {
-        text : "",
-        choices : [
-            ["Go to page 4", "page4"],
-            ["Go to page 5", "page5"],
-            ]
-    },
-    page4: {
-        text :"",
-        choices : [
-            ["Go to page5", "page5"],
-            ]
-    },
-    page5: {
-        text : "",
-        choices : []
-    }
-}
-    function createButton(buttonText, choices){
-        let button = document.createElement("buttons");
-        button.innerHTML = buttonText;
-        buttonContainer.appendChild(button);
+        let buttonContainer = document.getElementById("buttons");
+        let history = ["intro"];
+        const story = {
+            intro : {
+                text : "Walk to bakery after dinner",
+                choices : [
+                    ["Go to page 1", "page1"],
+                    ["Go to page 2", "page2"],
+                    ["Go to page 3", "page3"]
+                ]
+            },
+            page1 : {
+                text : "See robbery",
+                choices : [
+                    ["Go to page 2", "page2"],
+                    ["Go to page 3", "page3"],
+                    ["Go to page 4", "page4"]
+                ]
+            },
+            page2 : {
+                text : "Pick up money off of floor.",
+                choices : [
+                    ["Go to page 3", "page3"],
+                    ["Go to page 4", "page4"],
+                    ["Go to page 5", "page5"]
+                ]
+            },
+            page3 : {
+                text : "Get questioned by police.",
+                choices : [
+                    ["Go to page 4", "page4"],
+                    ["Go to page 5", "page5"]
+                ]
+            },
+            page4 : {
+                text : "Look for robber.",
+                choices : [
+                    ["Go to page 5", "page5"]
+                ]
+            },
+            page5 : {
+                text : "Fight robber.",
+                choices : []
+            }
+        }
+        function makeButton(btnText, choice){
+            let button = document.createElement("button");
+            button.innerHTML = btnText;
+            buttonContainer.appendChild(button);
             button.addEventListener ("click", function() {
-                history.push(choices);
+                history.push(choice);
                 showStory();
             });
         }
-    
-function showStory(text){
-    let currentPage = history[history.length - 1];
-        storyText.innerText = "";
-        buttonContainer.innerHTML="";{
-}
-}
- function buildStory (text) {
-     let storyItem = document.createElement("p");
-     storyItem.innerText = text;
-     storyContainer.appendChild(storyItem);
-}
-    for(let page of history){ // build story text from items in history array
+        function buildStory(text) {
+            let storyItem = document.createElement("p");
+            storyItem.innerText = text;
+            storyContainer.appendChild(storyItem);
+        }
+        function showStory(){
+            let currentPage = history[history.length - 1]; // set currentPage to last index of history array.
+            storyContainer.innerHTML = ""; // reset html
+            buttonContainer.innerHTML = ""; // reset buttons
+            
+            for(let page of history){ // build story text from items in history array
                 buildStory(story[page].text);
-}
-    for(let choice of story[currentPage].choices){ // build buttons from choices property of most recent story choice
-                makeButton(choices[0], choices[1])
-}
-</script>
-
-
+            }
+            
+            for(let choice of story[currentPage].choices){ // build buttons from choices property of most recent story choice
+                makeButton(choice[0], choice[1])
+            }
+        }
+        showStory();
+        
+        
+    </script>
+      
 </body>
-</html> 
+</html>
