@@ -29,22 +29,22 @@
         let history = ["intro"];
         const story = {
             intro : {
-                text : "Walk to bakery after dinner",
+                text : "Ross, Chandler, Joey, Rachel, Monica, and Phoebe decide to go buy dessert at a Japanese bakery, when a Bank of America gets robbed.",
                 choices : [
-                    ["Go to page 1", "page1"],
-                    ["Go to page 2", "page2"],
-                    ["Go to page 3", "page3"]
+                    ["Watch robbery occur at bank", "Choice1"],
+                    ["Walk away", "choice2"],
+                    ["Try to stop robber", "Choice3"]
                 ]
             },
-            page1 : {
-                text : "See robbery",
+            Choice1 : {
+                text : "",
                 choices : [
-                    ["Go to page 2", "page2"],
-                    ["Go to page 3", "page3"],
-                    ["Go to page 4", "page4"]
+                    ["", "Choice2"],
+                    ["", "Choice3"],
+                    ["", "Choice4"]
                 ]
             },
-            page2 : {
+            Choice2 : {
                 text : "Pick up money off of floor.",
                 choices : [
                     ["Go to page 3", "page3"],
@@ -52,20 +52,20 @@
                     ["Go to page 5", "page5"]
                 ]
             },
-            page3 : {
+            Choice3 : {
                 text : "Get questioned by police.",
                 choices : [
                     ["Go to page 4", "page4"],
                     ["Go to page 5", "page5"]
                 ]
             },
-            page4 : {
+            Choice4 : {
                 text : "Look for robber.",
                 choices : [
                     ["Go to page 5", "page5"]
                 ]
             },
-            page5 : {
+            Choice5 : {
                 text : "Fight robber.",
                 choices : []
             }
