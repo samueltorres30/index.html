@@ -70,7 +70,7 @@ const story = {
         choices : [""]
     }
 }
-    function makeButton(buttonText, choices){
+function createButton(buttonText, choices){
         let button = document.createElement("buttons");
         button.innerHTML = buttonText;
         buttonContainer.appendChild(button);
@@ -79,26 +79,24 @@ const story = {
                 showStory();
             });
         }
-    function showStory(text){
-        let currentPage = history[history.length - 1];
-        console.log(currentPage);
+    
+function showStory(text){
+    let currentPage = history[history.length - 1];
         storyText.innerText = "";
-        buttonContainer.innerHTML="";
-    }
-    for(let page of history){ // build story text from items in history array
-                buildStory(story[page].text);
-    }
-    for(let choice of story[currentPage].choices){ // build buttons from choices property of most recent story choice
-                makeButton(choices[0], choices[1])
-    }
-
-
+        buttonContainer.innerHTML="";{
+}
+}
  function buildStory (text) {
-     let currentPage = history[history.length - 1];
      let storyItem = document.createElement("p");
      storyItem.innerText = text;
      storyContainer.appendChild(storyItem);
- }
+}
+    for(let page of history){ // build story text from items in history array
+                buildStory(story[page].text);
+}
+    for(let choice of story[currentPage].choices){ // build buttons from choices property of most recent story choice
+                makeButton(choices[0], choices[1])
+    }
 </script>
 
 
