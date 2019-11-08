@@ -41,35 +41,67 @@
                 ]
             },
             choice1a : {
-                text : "When the police confront them, they stay mostly quiet. They don't say anything to the police about the robber.",
+                text : "When the police confront them, they stay mostly quiet. They don't say anything to the police about the robber. The police question them about everything they know, but they don't say anything, since they are afraid. Soon after, the police leave them and begin to investigate the crime scene.",
                 choices : [
-                    ["", "choice5"]
+                    ["Continue", "choice1b"]
+                ]
+            },
+            choice1b : {
+                text : "After that, they decide to find the robber because they feel bad. They leave the crime scene and begin searching in the general direction where they saw him last. What happens next?",
+                choices : [
+                    ["They don't find the robber", "dinnerEnding"],
+                    ["They find the robber", "choice1c"]
+                ]
+            },
+            choice1c : {
+                text : "As they are walking, Rachel yells out, 'Hey, he's in that restaurant! Let's go!' Joey runs in front of the group, and runs towards the attacker once he is inside the building. The robber realizes that he is in danger and tries to defend himself but fails to do so. Joey punches him straight in the face and knocks him out cold. 'I got him! Call the police now!' Joey turns to tell Rachel. Joey doesn't realize it, but the robber slowly regains strength and consciousness behind him. When Ross sees this, he yells out to Joey, 'Behind you!' But by then, it's too late. Joey was shot.",
+                choices : [
+                    ["Continue", "funeralEnding"]
                 ]
             },
             choice2 : {
-                text : "The group feels bad about walking away, and return. They find money on the floor and pick it up.",
+                text : "The group walks away from the crime scene but, after talking about it for a while, the group feels bad about walking away. They begin to walk to the crime scene once again, but find something unsual. They find money on the floor. What do they do with the money?",
                 choices : [
-                    ["", "choice3"],
-                    ["", "choice4"],
-                    ["", "choice5"]
+                    ["Take the bills to the police ", "choice2a"],
+                    ["Don't take the bills to the police", "dinnerEnding"]
                 ]
+            },
+            choice2a : {
+                text : "The group decides to take the money to the police station. Once there, the police thank them for their help in the investigation. The police say that they will test the money for any fingerprints that is on the money. The group leaves and everyone is happy that they helped out the police. They walk home, which takes them a few hours to do, and turn on the TV. When they turn on the TV, there is a news reporter that says, 'A local bank robber was caught, after a group of friends helped with the investigation. Police say the robber was caught in a local McDonald's trying to order food with the stolen money. They have arrested him and have charged him with robbery.' Monica turns off the TV and exclaims, 'We did it!' The whole group jumps up and down in excitement.",
+                choices : [
+                    ["Continue", "partyEnding"]
+                ]  
             },
             choice3 : {
-                text : "They try and confront the robber. They walk over to the bank, and Joey stares eye-to-eye at the robber.",
+                text : "They try and confront the robber.  They walk over to the bank, and enter through the main entrance. 'There he is!' Chandler exclaims and points toward a figure behind the desk. Joey makes eye contact and stares eye-to-eye at the robber. Joey runs to the robber while screaming, 'Aaaaaahhhh!' Joey hits the robber straight in the face but the robber seems unfazed. The robber makes an angry face before also knocking out Joey with a punch to the face. Before anyone could do anything, the robber quickly sprinted away. Monica, Rachel, and Phoebe cry and begin to run towards him. Chandler calls an ambulance, while the rest of the group is in complete shock and hope he isn't dead. Soon after, the ambulance arrives and rushes him to the hospital, where Joey's fate is unknown. What will his fate be?",
                 choices : [
-                    ["", "choice4"],
-                    ["", "choice5"]
+                    ["Joey dies", "funeralEnding"],
+                    ["Joey survives", "choice3a"]
                 ]
             },
-            choice4 : {
-                text : "Look for robber.",
+            choice3a : {
+                text : "Joey survives from his injuries and recovers quickly. His friends are relieved that he survived and are so grateful for all the doctors and nurses that helped him survive. When he is released to go home, they decide to do something very special for him.",
                 choices : [
-                    ["", "choice5"]
+                    ["Continue", "partyEnding"]
                 ]
             },
-            choice5 : {
-                text : "Fight robber.",
-                choices : []
+            dinnerEnding : {
+                text : "The group doesn't find the robbers, but they find thousands of $100 bills on the floor, signifying the robber was careless. They decide not take the bills to the police station. They walk over to a restaurant and buy each other a big, juicy steak and having a huge feast. They enjoy their money and spend the rest of the day celebrating.",
+                choices : [
+                    ["Restart?", "intro"]
+                ]
+            },
+            funeralEnding : {
+                text : "Joey dies from his injuries soon after. The whole group is so traumatized from this event and can't even fathom or comprehend the situation. They grudgingly agree to go to his funeral, even though the last thing they want to see is their dead friend. They attend his funeral and everyone is crying. The group realizes that this is going to change their lives forever.",
+                choices : [
+                    ["Restart?", "intro"]
+                ]
+            },
+            partyEnding : {
+                text : "They have a party at their house as a form of celebration. They invite all their other friends, even the ones who they don't particularly like. They have wine and have a big dinner. Also, they have a dance and party until late at night. They are so happy and cannot contain themselves. This was a REAL cause of celebration.",
+                choices : [
+                    ["Restart?", "intro"]
+                ]
             }
         }
         function makeButton(btnText, choice){
