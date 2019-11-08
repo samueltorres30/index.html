@@ -34,77 +34,77 @@
                     ["Try to stop robber", "choice3"]
                 ]
             },
-            choice1 : {
+            choice1 : { // This is one of the branches where they just stand there and watch the robbery happen.
                 text : "They see the robbery happening in front of their eyes and are just bystanders that stare. They hope nothing happens and Monica calls the police. '911, what's your emergency?' says a dispatcher on the other end. 'There is a robbery at the Bank Of America at 9th Street.' Monica replied. The dispatcher said, 'Okay, we are coming to your location, please stay away from the crime scene and avoid any confrontation with the robber, as he may be dangerous.' 'Okay, thank you.' Monica said in a whispered tone. Rachel whispers to Monica, 'Hang up the call.' Monica proceeds to hang up the call. As soon as Monica hangs up the call, they see the robber walking out of the bank. It was a male person in their late 20s, with blonde hair and around 6 ft tall. The whole group just stares as he walks away from the crime scene. Soon after, the police arrives at the crime scene.",
                 choices : [
                     ["Continue", "choice1a"]
                 ]
             },
-            choice1a : {
+            choice1a : { // This is where they stay quiet when the police confront them. 
                 text : "When the police confront them, they stay mostly quiet. They don't say anything to the police about the robber. The police question them about everything they know, but they don't say anything, since they are afraid. Soon after, the police leave them and begin to investigate the crime scene.",
                 choices : [
                     ["Continue", "choice1b"]
                 ]
             },
-            choice1b : {
+            choice1b : { // This is the choice where they decide to find the robber.
                 text : "After that, they decide to find the robber because they feel bad. They leave the crime scene and begin searching in the general direction where they saw him last. What happens next?",
                 choices : [
                     ["They don't find the robber", "dinnerEnding"],
                     ["They find the robber", "choice1c"]
                 ]
             },
-            choice1c : {
+            choice1c : { // This is the choice where they find the robber and fight him in the restaurant. 
                 text : "As they are walking, Rachel yells out, 'Hey, he's in that restaurant! Let's go!' Joey runs in front of the group, and runs towards the attacker once he is inside the building. The robber realizes that he is in danger and tries to defend himself but fails to do so. Joey punches him straight in the face and knocks him out cold. 'I got him! Call the police now!' Joey turns to tell Rachel. Joey doesn't realize it, but the robber slowly regains strength and consciousness behind him. When Ross sees this, he yells out to Joey, 'Behind you!' But by then, it's too late. Joey was shot.",
                 choices : [
                     ["Continue", "funeralEnding"]
                 ]
             },
-            choice2 : {
+            choice2 : { // This is one of the branches where the group walks away from the crime scene.
                 text : "The group walks away from the crime scene but, after talking about it for a while, the group feels bad about walking away. They begin to walk to the crime scene once again, but find something unsual. They find money on the floor. What do they do with the money?",
                 choices : [
                     ["Take the bills to the police ", "choice2a"],
                     ["Don't take the bills to the police", "dinnerEnding"]
                 ]
             },
-            choice2a : {
+            choice2a : { // This is the choice where they take the money to the police station.
                 text : "The group decides to take the money to the police station. Once there, the police thank them for their help in the investigation. The police say that they will test the money for any fingerprints that is on the money. The group leaves and everyone is happy that they helped out the police. They walk home, which takes them a few hours to do, and turn on the TV. When they turn on the TV, there is a news reporter that says, 'A local bank robber was caught, after a group of friends helped with the investigation. Police say the robber was caught in a local McDonald's trying to order food with the stolen money. They have arrested him and have charged him with robbery.' Monica turns off the TV and exclaims, 'We did it!' The whole group jumps up and down in excitement.",
                 choices : [
                     ["Continue", "partyEnding"]
                 ]  
             },
-            choice3 : {
+            choice3 : { // This is one of the branches where they walk over to the bank to confront the robber.
                 text : "They try and confront the robber.  They walk over to the bank, and enter through the main entrance. 'There he is!' Chandler exclaims and points toward a figure behind the desk. Joey makes eye contact and stares eye-to-eye at the robber. Joey runs to the robber while screaming, 'Aaaaaahhhh!' Joey hits the robber straight in the face but the robber seems unfazed. The robber makes an angry face before also knocking out Joey with a punch to the face. Before anyone could do anything, the robber quickly sprinted away. Monica, Rachel, and Phoebe cry and begin to run towards him. Chandler calls an ambulance, while the rest of the group is in complete shock and hope he isn't dead. Soon after, the ambulance arrives and rushes him to the hospital, where Joey's fate is unknown. What will his fate be?",
                 choices : [
                     ["Joey dies", "funeralEnding"],
                     ["Joey survives", "choice3a"]
                 ]
             },
-            choice3a : {
+            choice3a : { // This is the choice where he survives from fighting the robber.
                 text : "Joey survives from his injuries and recovers quickly. His friends are relieved that he survived and are so grateful for all the doctors and nurses that helped him survive. When he is released to go home, they decide to do something very special for him.",
                 choices : [
                     ["Continue", "partyEnding"]
                 ]
             },
-            dinnerEnding : {
+            dinnerEnding : { // This is the dinner ending and ends with the group having a huge feast. 
                 text : "The group doesn't find the robbers, but they find thousands of $100 bills on the floor, signifying the robber was careless. They decide not take the bills to the police station. They walk over to a restaurant and buy each other a big, juicy steak and having a huge feast. They enjoy their money and spend the rest of the day celebrating.",
                 choices : [
                     ["Restart?", "intro"]
                 ]
             },
-            funeralEnding : {
+            funeralEnding : { // This is the funeral ending and ends in the death of Joey.
                 text : "Joey dies from his injuries soon after. The whole group is so traumatized from this event and can't even fathom or comprehend the situation. They grudgingly agree to go to his funeral, even though the last thing they want to see is their dead friend. They attend his funeral and everyone is crying. The group realizes that this is going to change their lives forever.",
                 choices : [
                     ["Restart?", "intro"]
                 ]
             },
-            partyEnding : {
+            partyEnding : { // This is the party ending and ends in celebration.
                 text : "They have a party at their house as a form of celebration. They invite all their other friends, even the ones who they don't particularly like. They have wine and have a big dinner. Also, they have a dance and party until late at night. They are so happy and cannot contain themselves. This was a REAL cause of celebration.",
                 choices : [
                     ["Restart?", "intro"]
                 ]
             }
         }
-        function makeButton(btnText, choice){
+        function makeButton(btnText, choice){ // This function makes the button actually show up.
             let button = document.createElement("button");
             button.innerHTML = btnText;
             buttonContainer.appendChild(button);
@@ -113,21 +113,21 @@
                 showStory();
             });
         }
-        function buildStory(text) {
+        function buildStory(text) { // This function builds the story using the text.
             let storyItem = document.createElement("p");
             storyItem.innerText = text;
             storyContainer.appendChild(storyItem);
         }
         function showStory(){
-            let currentPage = history[history.length - 1]; // set currentPage to last index of history array.
-            storyContainer.innerHTML = ""; // reset html
-            buttonContainer.innerHTML = ""; // reset buttons
+            let currentPage = history[history.length - 1];
+            storyContainer.innerHTML = ""; 
+            buttonContainer.innerHTML = ""; 
             
-            for(let page of history){ // build story text from items in history array
+            for(let page of history){
                 buildStory(story[page].text);
             }
             
-            for(let choice of story[currentPage].choices){ // build buttons from choices property of most recent story choice
+            for(let choice of story[currentPage].choices){
                 makeButton(choice[0], choice[1])
             }
         }
